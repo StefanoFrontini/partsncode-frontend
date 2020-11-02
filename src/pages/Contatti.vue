@@ -104,6 +104,10 @@
         </form>
       </div>
     </div>
+    <div class="section">
+      <strong>Corrado Di Marco</strong>
+      <p>Tel: 348-0779392</p>
+    </div>
   </Layout>
 </template>
 
@@ -132,7 +136,6 @@ if (process.isClient) {
 }
 
 export default {
-  name: "Example",
   components: {
     LMap: Vue2Leaflet.LMap,
     LTileLayer: Vue2Leaflet.LTileLayer,
@@ -141,6 +144,10 @@ export default {
     LTooltip: Vue2Leaflet.LTooltip,
 
     Header,
+  },
+  metaInfo: {
+    title: "Contatti | PartsnCode",
+    titleTemplate: "%s",
   },
   data() {
     return {
@@ -190,7 +197,7 @@ export default {
           ...this.formData,
         }),
       })
-        .then(() => this.$router.push("/success"))
+        .then(() => this.$router.push("/grazie/"))
         .catch((error) => alert(error));
     },
   },

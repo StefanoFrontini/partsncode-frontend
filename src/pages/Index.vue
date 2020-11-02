@@ -41,7 +41,7 @@
     <Header />
     <section class="image_bg">
       <div class="text">
-        <g-link class="link" to="/prodotti/">Inserisci il codice</g-link>
+        <g-link class="link" to="/spazzole/">Inserisci il codice</g-link>
       </div>
     </section>
   </Layout>
@@ -55,7 +55,8 @@ export default {
     Header,
   },
   metaInfo: {
-    title: "Home",
+    title: "PartsnCode",
+    titleTemplate: "%s",
   },
 };
 </script>

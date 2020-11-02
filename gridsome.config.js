@@ -6,6 +6,10 @@
 
 module.exports = {
   siteName: "Partsncode()",
+  icon: {
+    favicon: "./src/favicon.jpeg",
+    touchicon: "./src/favicon.jpeg",
+  },
   plugins: [
     {
       use: "@gridsome/source-strapi",

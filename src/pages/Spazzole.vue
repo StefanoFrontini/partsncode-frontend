@@ -80,7 +80,8 @@ export default {
     ProdottoCard,
   },
   metaInfo: {
-    title: "Prodotti",
+    title: "Spazzole | PartsnCode",
+    titleTemplate: "%s",
   },
   data: () => ({
     userInput: "",

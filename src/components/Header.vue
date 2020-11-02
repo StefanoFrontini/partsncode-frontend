@@ -6,10 +6,10 @@
       </strong>
       <nav class="nav" :class="{ 'nav-active': isActive }">
         <!-- <g-link class="nav__link" to="/">Cosa facciamo</g-link> -->
-        <g-link class="nav__link" to="/prodotti/"
+        <g-link class="nav__link" to="/spazzole/"
           >Spazzole e Portaspazzole</g-link
         >
-        <g-link class="nav__link" to="/contatti">Contatti</g-link>
+        <g-link class="nav__link" to="/contatti/">Contatti</g-link>
         <!-- <g-link class="nav__link" to="/">Contatti</g-link> -->
 
         <!-- <g-link class="nav__link" to="/">EN</g-link> -->

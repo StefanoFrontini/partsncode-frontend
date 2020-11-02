@@ -89,7 +89,7 @@
               </div>
               <div>
                 <label class="tel" for="tel">Telefono</label>
-                <input type="text" name="tel" v-model="formData.tel" />
+                <input type="tel" name="tel" v-model="formData.tel" />
               </div>
               <div>
                 <label class="email" for="email">Email</label>
@@ -168,7 +168,7 @@ export default {
           ...this.formData,
         }),
       })
-        .then(() => this.$router.push("/success"))
+        .then(() => this.$router.push("/grazie/"))
         .catch((error) => alert(error));
     },
   },
