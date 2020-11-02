@@ -64,7 +64,7 @@
       <h2 class="title">CONTATTACI</h2>
       <div class="form-section">
         <form
-          name="contact"
+          name="contatti"
           method="post"
           v-on:submit.prevent="handleSubmit"
           action="/success/"
@@ -83,7 +83,7 @@
             </div>
             <div>
               <label class="tel" for="tel">Telefono</label>
-              <input type="tel" name="tel" v-model="formData.telephone" />
+              <input type="tel" name="tel" v-model="formData.tel" />
             </div>
             <div>
               <label class="email" for="email">Email</label>

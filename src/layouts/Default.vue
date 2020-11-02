@@ -27,9 +27,9 @@ body {
   overflow-x: hidden;
   position: relative;
 }
-
+/*
 .footer {
   text-align: center;
   margin-top: 100px;
-}
+}*/
 </style>

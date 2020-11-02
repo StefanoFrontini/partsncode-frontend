@@ -6,7 +6,9 @@
       </strong>
       <nav class="nav" :class="{ 'nav-active': isActive }">
         <!-- <g-link class="nav__link" to="/">Cosa facciamo</g-link> -->
-        <g-link class="nav__link" to="/prodotti/">Spazzole</g-link>
+        <g-link class="nav__link" to="/prodotti/"
+          >Spazzole e Portaspazzole</g-link
+        >
         <g-link class="nav__link" to="/contatti">Contatti</g-link>
         <!-- <g-link class="nav__link" to="/">Contatti</g-link> -->
 
@@ -71,7 +73,7 @@ export default {
 }
 
 .nav__link {
-  margin-left: 20px;
+  margin-left: 70px;
   color: white;
   text-decoration: none;
   letter-spacing: 3px;
@@ -100,7 +102,7 @@ export default {
     background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     width: 50%;
     transform: translateX(100%);
     opacity: 1;

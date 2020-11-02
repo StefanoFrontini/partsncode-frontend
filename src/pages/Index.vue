@@ -41,7 +41,7 @@
     <Header />
     <section class="image_bg">
       <div class="text">
-        <g-link class="link" to="/prodotti/">Trova la spazzola</g-link>
+        <g-link class="link" to="/prodotti/">Inserisci il codice</g-link>
       </div>
     </section>
   </Layout>
