@@ -107,6 +107,7 @@
     <div class="section">
       <strong>Corrado Di Marco</strong>
       <p>Tel: 348-0779392</p>
+      <p>Email: corrado@partsncode.works</p>
     </div>
   </Layout>
 </template>
