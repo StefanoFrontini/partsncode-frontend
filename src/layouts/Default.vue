@@ -27,6 +27,7 @@ body {
   overflow-x: hidden;
   position: relative;
 }
+
 /*
 .footer {
   text-align: center;

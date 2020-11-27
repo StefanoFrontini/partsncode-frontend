@@ -2,7 +2,9 @@
   <div class="container">
     <header class="header">
       <strong>
-        <g-link class="logo" to="/">{{ $static.metadata.siteName }}</g-link>
+        <g-link to="/"
+          ><g-image src="~/assets/logo-ancar.jpg" alt="logo An Car" width="200"
+        /></g-link>
       </strong>
       <nav class="nav" :class="{ 'nav-active': isActive }">
         <!-- <g-link class="nav__link" to="/">Cosa facciamo</g-link> -->

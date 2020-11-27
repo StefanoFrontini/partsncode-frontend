@@ -41,7 +41,9 @@
     <Header />
     <section class="image_bg">
       <div class="text">
-        <g-link class="link" to="/spazzole/">Inserisci il codice</g-link>
+        <g-link class="link" to="/spazzole/"
+          >Inserisci il codice internazionale</g-link
+        >
       </div>
     </section>
   </Layout>

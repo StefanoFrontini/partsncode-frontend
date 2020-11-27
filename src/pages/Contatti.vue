@@ -48,7 +48,7 @@
             }"
           >
             <div>
-              Via Guidobaldi snc 64010 - Alba Adriatica (TE) - Italy
+              Viale della Vittoria 216 - Alba Adriatica (TE) - Italy
               <p v-show="showParagraph">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
                 sed pretium nisl, ut sagittis sapien. Sed vel sollicitudin nisi.
@@ -106,8 +106,10 @@
     </div>
     <div class="section">
       <strong>Corrado Di Marco</strong>
-      <p>Tel: 348-0779392</p>
-      <p>Email: corrado@partsncode.works</p>
+      <p><a href="tel:+393480779392">cell: 348.077.93.92</a></p>
+      <p>
+        <a href="mailto:corrado@partsncode.works">corrado@partsncode.works</a>
+      </p>
     </div>
   </Layout>
 </template>
@@ -205,7 +207,7 @@ export default {
   computed: {
     center() {
       if (process.isClient) {
-        return latLng(42.83461, 13.9195);
+        return latLng(42.83744, 13.92909);
       }
     },
   },
@@ -266,6 +268,12 @@ textarea {
   text-align: center;
   margin-top: 4em;
 }
+
+.section p a {
+  color: white;
+  text-decoration: none;
+}
+
 .form-section {
   width: 100%;
 }
