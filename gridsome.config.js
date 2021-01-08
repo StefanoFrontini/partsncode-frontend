@@ -5,7 +5,9 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: "Partsncode()",
+  siteName: "AncoCar",
+  siteDescription: "Vendita spazzole e portaspazzole",
+  siteUrl: "https://www.ancocar.com/",
   icon: {
     favicon: "./src/favicon.jpeg",
     touchicon: "./src/favicon.jpeg",

@@ -48,6 +48,15 @@
     </section>
   </Layout>
 </template>
+<static-query>
+query {
+  metadata {
+    siteName
+    siteUrl
+    siteDescription
+  }
+}
+</static-query>
 
 <script>
 import Header from "~/components/Header.vue";
@@ -56,9 +65,36 @@ export default {
   components: {
     Header,
   },
-  metaInfo: {
-    title: "PartsnCode",
-    titleTemplate: "%s",
+  metaInfo() {
+    return {
+      title: `${this.$static.metadata.siteName}`,
+      titleTemplate: "%s",
+      meta: [
+        { property: "og:type", content: "website" },
+        { property: "og:title", content: `${this.$static.metadata.siteName}` },
+        {
+          property: "og:description",
+          content: `${this.$static.metadata.siteDescription}`,
+        },
+        { property: "og:url", content: `${this.$static.metadata.siteUrl}` },
+        { property: "og:image", content: `${this.ogImageUrl}` },
+
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: `${this.$static.metadata.siteName}` },
+        {
+          name: "twitter:description",
+          content: `${this.$static.metadata.siteDescription}`,
+        },
+        { name: "twitter:site", content: `${this.$static.metadata.siteUrl}` },
+        { name: "twitter:creator", content: "AncoCar" },
+        { name: "twitter:image", content: `${this.ogImageUrl}` },
+      ],
+    };
+  },
+  computed: {
+    ogImageUrl() {
+      return `${this.$static.metadata.siteUrl}/logo-ancocar.jpeg`;
+    },
   },
 };
 </script>

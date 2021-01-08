@@ -3,7 +3,10 @@
     <header class="header">
       <strong>
         <g-link to="/"
-          ><g-image src="~/assets/logo-ancar.jpg" alt="logo An Car" width="200"
+          ><g-image
+            src="~/assets/logo-ancocar.jpeg"
+            alt="logo AncoCar"
+            width="200"
         /></g-link>
       </strong>
       <nav class="nav" :class="{ 'nav-active': isActive }">

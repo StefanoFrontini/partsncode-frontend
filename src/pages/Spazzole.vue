@@ -70,6 +70,16 @@ query {
 
 </page-query>
 
+<static-query>
+query {
+  metadata {
+    siteName
+    siteUrl
+    siteDescription
+  }
+}
+</static-query>
+
 <script>
 import Header from "~/components/Header.vue";
 import ProdottoCard from "~/components/ProdottoCard.vue";
@@ -79,9 +89,48 @@ export default {
     Header,
     ProdottoCard,
   },
-  metaInfo: {
-    title: "Spazzole | PartsnCode",
-    titleTemplate: "%s",
+  metaInfo() {
+    return {
+      title: "Spazzole e Porta Spazzole",
+      titleTemplate: "%s",
+      meta: [
+        {
+          key: "description",
+          name: "description",
+          content: "Elenco spazzole e porta spazzole",
+        },
+        { property: "og:type", content: "website" },
+        {
+          property: "og:title",
+          content: "Elenco spazzole e porta spazzole | AncoCar",
+        },
+        {
+          property: "og:description",
+          content: "Elenco spazzole e porta spazzole",
+        },
+        {
+          property: "og:url",
+          content: `${this.$static.metadata.siteUrl}/spazzole/`,
+        },
+        { property: "og:image", content: `${this.ogImageUrl}` },
+
+        { name: "twitter:card", content: "summary_large_image" },
+        {
+          name: "twitter:title",
+          content: "Elenco spazzole e porta spazzole | AncoCar",
+        },
+        {
+          name: "twitter:description",
+          content: "Elenco spazzole e porta spazzole",
+        },
+        {
+          name: "twitter:site",
+          content: `${this.$static.metadata.siteUrl}/spazzole/`,
+        },
+        { name: "twitter:creator", content: "AncoCar" },
+        { name: "twitter:image", content: `${this.ogImageUrl}` },
+      ],
+    };
   },
   data: () => ({
     userInput: "",
@@ -107,6 +156,11 @@ export default {
         );
         this.output = matchArray;
       },
+    },
+  },
+  computed: {
+    ogImageUrl() {
+      return `${this.$static.metadata.siteUrl}/logo-ancocar.jpeg`;
     },
   },
 

@@ -149,7 +149,7 @@ export default {
     Header,
   },
   metaInfo: {
-    title: "Contatti | PartsnCode",
+    title: "Contatti | AncoCar",
     titleTemplate: "%s",
   },
   data() {

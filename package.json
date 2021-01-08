@@ -8,9 +8,9 @@
   },
   "dependencies": {
     "@gridsome/source-strapi": "^0.1.0",
-    "gridsome": "^0.7.21",
+    "gridsome": "^0.7.23",
     "leaflet": "^1.7.1",
-    "netlify-cli": "^2.69.0",
+    "netlify-cli": "^2.71.0",
     "vue2-leaflet": "^2.6.0"
   },
   "devDependencies": {
