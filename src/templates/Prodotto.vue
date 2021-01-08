@@ -52,13 +52,13 @@
           <p>{{ $page.strapiProdotto.descrizione }}</p>
         </div>
 
-        <div class="box">
+        <!-- <div class="box">
           <h3>CODICI ALTERNATIVI</h3>
           <p>{{ $page.strapiProdotto.codici_alternativi }}</p>
-        </div>
+        </div> -->
 
         <div class="box">
-          <h3>APPLICAZIONI</h3>
+          <h3>REPLACING</h3>
           <p>{{ $page.strapiProdotto.applicazioni }}</p>
         </div>
         <div class="box">
@@ -119,7 +119,6 @@ query ($id: ID!) {
   strapiProdotto(id: $id) {
     codice
     descrizione
-    codici_alternativi
     applicazioni
     immagine_principale {
       id

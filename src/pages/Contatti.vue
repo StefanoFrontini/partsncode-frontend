@@ -108,7 +108,7 @@
       <strong>Corrado Di Marco</strong>
       <p><a href="tel:+393480779392">cell: 348.077.93.92</a></p>
       <p>
-        <a href="mailto:corrado@partsncode.works">corrado@partsncode.works</a>
+        <a href="mailto:ancocar2020@gmail.com">ancocar2020@gmail.com</a>
       </p>
     </div>
   </Layout>
@@ -220,6 +220,7 @@ export default {
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-top: 2em;
 }
 
 .map {
