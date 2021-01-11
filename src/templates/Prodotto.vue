@@ -33,6 +33,31 @@
           </div>
         </div>
       </div>
+      <div class="buy">
+        <form
+          name="buy"
+          method="post"
+          @submit.prevent="handleBuy"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+        >
+          <!--  <label for="quantity">Quantità</label>
+          <input
+            type="number"
+            id="number"
+            name="quantity"
+            value="1"
+            min="1"
+            max="10"
+            v-model="formBuy.quantity"
+          />
+          <button type="submit">Compra ora</button> -->
+          <input type="hidden" name="codice" value="" />
+          <p hidden>
+            <label> Don’t fill this out: <input name="bot-field"/></label>
+          </p>
+        </form>
+      </div>
       <div class="boxes">
         <div
           class="box"
@@ -63,7 +88,14 @@
         </div>
         <div class="box">
           <h3>PREZZO</h3>
-          <p>{{ $page.strapiProdotto.prezzo }} €</p>
+          <p>
+            {{
+              new Intl.NumberFormat("it-IT", {
+                style: "currency",
+                currency: "EUR",
+              }).format($page.strapiProdotto.prezzo.toFixed(2))
+            }}
+          </p>
         </div>
       </div>
       <div class="section">
@@ -141,6 +173,8 @@ query ($id: ID!) {
 
 <script>
 import Header from "~/components/Header.vue";
+import { loadStripe } from "@stripe/stripe-js";
+import axios from "axios";
 
 export default {
   components: {
@@ -149,6 +183,7 @@ export default {
   data() {
     return {
       formData: {},
+      formBuy: { quantity: 1, codice: "" },
     };
   },
   methods: {
@@ -171,11 +206,40 @@ export default {
         .then(() => this.$router.push("/grazie/"))
         .catch((error) => alert(error));
     },
+    async handleBuy(e) {
+      const response = await axios.post(
+        "/.netlify/functions/create-checkout",
+        this.formBuy
+      );
+
+      //this.serverResponse = response.data.message;
+
+      /* {
+
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: JSON.stringify(this.formData),
+          this.encode({
+          "form-name": e.target.getAttribute("name"),
+          ...this.formData,
+        }),
+        }); */
+
+      const stripe = await loadStripe(response.publishableKey);
+      const { error } = await stripe.redirectToCheckout({
+        sessionId: response.sessionId,
+      });
+      if (error) {
+        console.error(error);
+      }
+    },
   },
   beforeMount() {
     this.formData.message = `Vorrei avere maggiori informazioni sul prodotto con codice: ${
       this.$page.strapiProdotto.codice
     }`;
+  },
+  mounted() {
+    this.formBuy.codice = this.$page.strapiProdotto.codice;
   },
 };
 </script>

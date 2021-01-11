@@ -1,6 +1,7 @@
 [build]
   publish="dist"
   command="gridsome build"
+  functions="functions"
 
 [[plugins]]
 package = "netlify-plugin-image-optim"
