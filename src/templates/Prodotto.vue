@@ -77,13 +77,13 @@
           <p>{{ $page.strapiProdotto.descrizione }}</p>
         </div>
 
-        <div class="box">
+        <!-- <div class="box">
           <h3>CODICI ALTERNATIVI</h3>
           <p>{{ $page.strapiProdotto.codici_alternativi }}</p>
-        </div>
+        </div> -->
 
         <div class="box">
-          <h3>APPLICAZIONI</h3>
+          <h3>REPLACING</h3>
           <p>{{ $page.strapiProdotto.applicazioni }}</p>
         </div>
         <div class="box">
@@ -151,7 +151,6 @@ query ($id: ID!) {
   strapiProdotto(id: $id) {
     codice
     descrizione
-    codici_alternativi
     applicazioni
     immagine_principale {
       id
@@ -171,6 +170,16 @@ query ($id: ID!) {
 
 </page-query>
 
+<static-query>
+query {
+  metadata {
+    siteName
+    siteUrl
+    siteDescription
+  }
+}
+</static-query>
+
 <script>
 import Header from "~/components/Header.vue";
 import { loadStripe } from "@stripe/stripe-js";
@@ -185,6 +194,66 @@ export default {
       formData: {},
       formBuy: { quantity: 1, codice: "" },
     };
+  },
+  metaInfo() {
+    return {
+      title: `${this.$page.strapiProdotto.codice}`,
+      titleTemplate: "%s",
+      meta: [
+        {
+          key: "description",
+          name: "description",
+          content: `${this.$page.strapiProdotto.descrizione}`,
+        },
+
+        { property: "og:type", content: "article" },
+        {
+          property: "og:title",
+          content: `${this.$page.strapiProdotto.codice}`,
+        },
+        {
+          property: "og:description",
+          content: `${this.$page.strapiProdotto.descrizione}`,
+        },
+        { property: "og:url", content: `${this.postUrl}` },
+
+        { property: "og:image", content: `${this.ogImageUrl}` },
+
+        { name: "twitter:card", content: "summary_large_image" },
+        {
+          name: "twitter:title",
+          content: `${this.$page.strapiProdotto.codice}`,
+        },
+        {
+          name: "twitter:description",
+          content: `${this.$page.strapiProdotto.descrizione}`,
+        },
+        { name: "twitter:creator", content: "AncoCar" },
+        { name: "twitter:image", content: `${this.ogImageUrl}` },
+      ],
+    };
+  },
+
+  computed: {
+    ogImageUrl() {
+      return (
+        `${this.$page.strapiProdotto.immagine_principale.url}` ||
+        `${this.$static.metadata.siteUrl}/logo-ancocar.jpeg`
+      );
+    },
+    postUrl() {
+      let siteUrl = this.$static.metadata.siteUrl;
+      const parsedCodice = (codice) => {
+        const pattern = /[a-zA-Z\d]/g;
+        const new_str = this.$page.strapiProdotto.codice.match(pattern);
+        const result = new_str.join("");
+        return result;
+      };
+      let postPath = `/spazzole/spazzola/codice=${parsedCodice(
+        this.$page.strapiProdotto.codice
+      )}`;
+      return `${siteUrl}${postPath}`;
+    },
   },
   methods: {
     encode(data) {

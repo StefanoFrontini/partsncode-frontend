@@ -5,7 +5,10 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: "Partsncode()",
+  siteName: "AncoCar",
+  siteDescription:
+    "Vendita Spazzole e Portaspazzole Motorini Avviamento e Alternatori Auto storiche e d’epoca",
+  siteUrl: "https://www.ancocar.com/",
   icon: {
     favicon: "./src/favicon.jpeg",
     touchicon: "./src/favicon.jpeg",
@@ -24,6 +27,14 @@ module.exports = {
           identifier: "",
           password: "",
         },
+      },
+    },
+    {
+      use: "gridsome-plugin-gtm",
+      options: {
+        id: "GTM-M3L7LHN",
+        enabled: true,
+        debug: false,
       },
     },
   ],

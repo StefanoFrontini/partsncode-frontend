@@ -19,7 +19,7 @@ export default {
   },
   metaInfo() {
     return {
-      title: "Grazie | PartsnCode",
+      title: "Grazie | AncoCar",
       titleTemplate: "%s",
     };
   },
