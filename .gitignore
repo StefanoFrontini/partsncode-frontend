@@ -11,3 +11,5 @@ dist
 .netlify
 partsncode_api
 prodotti
+
+jsconfig.json
