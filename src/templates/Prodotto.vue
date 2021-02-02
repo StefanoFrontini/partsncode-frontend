@@ -41,7 +41,7 @@
           data-netlify="true"
           data-netlify-honeypot="bot-field"
         >
-          <!--  <label for="quantity">Quantità</label>
+          <label for="quantity">Quantità</label>
           <input
             type="number"
             id="number"
@@ -51,7 +51,7 @@
             max="10"
             v-model="formBuy.quantity"
           />
-          <button type="submit">Compra ora</button> -->
+          <button type="submit">Compra ora</button>
           <input type="hidden" name="codice" value="" />
           <p hidden>
             <label> Don’t fill this out: <input name="bot-field"/></label>
@@ -280,6 +280,7 @@ export default {
         "/.netlify/functions/create-checkout",
         this.formBuy
       );
+      console.log(response);
 
       //this.serverResponse = response.data.message;
 
@@ -293,9 +294,9 @@ export default {
         }),
         }); */
 
-      const stripe = await loadStripe(response.publishableKey);
+      const stripe = await loadStripe(response.data.publishableKey);
       const { error } = await stripe.redirectToCheckout({
-        sessionId: response.sessionId,
+        sessionId: response.data.sessionId,
       });
       if (error) {
         console.error(error);

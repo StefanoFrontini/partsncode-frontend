@@ -101,7 +101,7 @@ export default {
 
 <style scoped>
 .image_bg {
-  background: url(~@/assets/parts-home.jpeg);
+  background: url(~@/assets/ancocar-home.jpeg);
   height: 90vh;
   width: 100%;
   background-repeat: no-repeat;

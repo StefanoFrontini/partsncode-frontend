@@ -9,19 +9,20 @@
   "dependencies": {
     "@gridsome/source-strapi": "^0.1.0",
     "@stripe/stripe-js": "^1.11.0",
-    "axios": "^0.21.0",
+    "axios": "^0.21.1",
     "gridsome": "^0.7.23",
-    "leaflet": "^1.7.1",
     "gridsome-plugin-gtm": "^0.1.1",
+    "leaflet": "^1.7.1",
     "netlify-cli": "^2.71.0",
     "node-fetch": "^2.6.1",
-    "stripe": "^8.126.0",
+    "nodemailer": "^6.4.17",
+    "stripe": "^8.131.1",
     "vue2-leaflet": "^2.6.0"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.32",
-    "@fortawesome/free-brands-svg-icons": "^5.15.1",
-    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-brands-svg-icons": "^5.15.2",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@fortawesome/vue-fontawesome": "^0.1.9"
   }
 }
