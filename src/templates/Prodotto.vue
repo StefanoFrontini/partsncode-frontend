@@ -33,7 +33,7 @@
           </div>
         </div>
       </div>
-      <div class="buy">
+      <!-- <div class="buy">
         <form
           name="buy"
           method="post"
@@ -57,7 +57,7 @@
             <label> Don’t fill this out: <input name="bot-field"/></label>
           </p>
         </form>
-      </div>
+      </div> -->
       <div class="boxes">
         <div
           class="box"
