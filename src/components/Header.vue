@@ -78,20 +78,13 @@ export default {
 }
 
 .nav__link {
-  margin-left: 70px;
+  margin-left: 0px;
   color: white;
   text-decoration: none;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   font-weight: bold;
-  font-size: 14px;
-}
-
-.logo {
-  color: white;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  font-size: 20px;
+  font-size: 1rem;
+  text-align: center;
 }
 
 .footer {
@@ -107,7 +100,7 @@ export default {
     background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     width: 50%;
     transform: translateX(100%);
     opacity: 1;
@@ -124,5 +117,11 @@ export default {
 
 .nav-active {
   transform: translateX(0%);
+}
+
+@media (min-width: 780px) {
+  .nav__link {
+    margin-left: 50px;
+  }
 }
 </style>

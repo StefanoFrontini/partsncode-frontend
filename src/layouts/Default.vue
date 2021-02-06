@@ -1,14 +1,6 @@
 <template>
   <div class="layout">
     <slot />
-
-    <!-- <footer class="footer">
-      <p>
-        Parts'n'code di Corrado Di Marco e Denis Cordoni, Via Guidobaldi snc -
-        64010 - Alba Adriatica (TE - Italy). Tel./Whatsapp: +39 348 077 9392,
-        Email: info@partsncode.works
-      </p>
-    </footer> -->
   </div>
 </template>
 
@@ -27,10 +19,4 @@ body {
   overflow-x: hidden;
   position: relative;
 }
-
-/*
-.footer {
-  text-align: center;
-  margin-top: 100px;
-}*/
 </style>
